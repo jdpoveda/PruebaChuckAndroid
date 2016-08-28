@@ -28,7 +28,7 @@ public class MainActivity extends ActionBarActivity {
 
     private DatabaseHelper dh;
     private FraseChuck fraseChuck;
-    private ApplicationClass appClass;
+    private AppClass appClass;
     private TextView cargaDatos;
 
     @Override
@@ -36,7 +36,7 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        appClass = (ApplicationClass) getApplication();
+        appClass = (AppClass) getApplication();
         dh = appClass.getDbh();
 
         cargaDatos = (TextView) findViewById(R.id.cargaDatosTextView);
