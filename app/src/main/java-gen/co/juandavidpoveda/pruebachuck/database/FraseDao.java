@@ -40,7 +40,7 @@ public class FraseDao extends AbstractDao<Frase, Long> {
     public static void createTable(SQLiteDatabase db, boolean ifNotExists) {
         String constraint = ifNotExists? "IF NOT EXISTS ": "";
         db.execSQL("CREATE TABLE " + constraint + "'frase' (" + //
-                "'_id' INTEGER PRIMARY KEY ," + // 0: id
+                "'_id' INTEGER PRIMARY KEY AUTOINCREMENT ," + // 0: id
                 "'ICON_URL' TEXT," + // 1: icon_url
                 "'URL' TEXT," + // 2: url
                 "'VALUE' TEXT);"); // 3: value

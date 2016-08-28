@@ -8,11 +8,11 @@ import de.greenrobot.daogenerator.Schema;
 public class MyDaoGenerator {
 
     public static void main(String args[]) throws Exception {
-        Schema schema = new Schema(1, "co.juandavidpoveda.pruebachuck.database");
+        Schema schema = new Schema(2, "co.juandavidpoveda.pruebachuck.database");
 
         //Frase
         Entity frase = schema.addEntity("Frase");
-        Property fraseId = frase.addIdProperty().getProperty();
+        Property fraseId = frase.addIdProperty().autoincrement().getProperty();
         frase.setTableName("frase");
         frase.addStringProperty("icon_url");
         frase.addStringProperty("url");
@@ -23,3 +23,5 @@ public class MyDaoGenerator {
         new DaoGenerator().generateAll(schema, args[0]);
     }
 }
+
+
