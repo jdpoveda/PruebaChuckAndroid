@@ -54,7 +54,7 @@ public class DatabaseHelper extends DaoMaster.OpenHelper {
     }
 
 
-    public void insertFrase(FraseChuck fraseChuck){
+    public long insertFrase(FraseChuck fraseChuck){
 
         Frase fraseDb = new Frase();
 
@@ -64,9 +64,11 @@ public class DatabaseHelper extends DaoMaster.OpenHelper {
 
         daoSession.insertOrReplace(fraseDb);
 
+        return fraseDb.getId();
+
     }
 
-    public void deleteFraseById(String id){
+    public void deleteFraseById(long id){
         fraseDao.queryBuilder().where(FraseDao.Properties.Id.eq(id)).buildDelete().executeDeleteWithoutDetachingEntities();
     }
 
